@@ -31,4 +31,4 @@ In this repo is the file [`rushing.json`](/rushing.json). It contains data about
 3.Run 'bundle exec rake db:migrate' to run migration<br>
 4.Run 'bundle exec rake db:seed' to populate database.<br>
 5.Run 'rails s' to start the server.<br>
-6.Use a browser to visit https://localhost:3000<br>
+6.Use a browser to visit http://localhost:3000<br>
