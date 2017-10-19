@@ -1,0 +1,56 @@
+<%= form_tag(players_index_path, :method => 'get', :id => 'search_form') do %>
+  Name: <%= text_field_tag 'name', params[:name], :class => 'input' %>
+
+  <%= submit_tag 'Search', :class => 'button' %>
+<% end %>
+
+<%= link_to 'Download', players_index_path(params.merge(:format => 'csv')), data: {turbolinks: false} %>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Team</th>
+    <th>Position</th>
+    <th>Attempts per game</th>
+    <th>Attempts</th>
+    <th><%= sortable 'yards' %></th>
+    <th>Yards per attempt</th>
+    <th>Yards per game</th>
+    <th><%= sortable 'touchdowns' %></th>
+    <th><%= sortable 'longest_rush' %></th>
+    <th>Touchdown Occured</th>
+    <th>Rushing First Downs</th>
+    <th>Rushing First Down Percentage</th>
+    <th>Rushing 20+ Yards Each</th>
+    <th>Rushing 40+ Yards Each</th>
+    <th>Rushing Fumbles</th>
+  </thead>
+  <tbody>
+    <% if @players.size == 0 %>
+      There is no matching records.
+    <% else %>
+      <% for player in @players %>
+        <tr>
+          <td><%= player.name %></td>
+          <td><%= player.team %></td>
+          <td><%= player.position %></td>
+          <td><%= player.attempts_per_game %></td>
+          <td><%= player.attempts %></td>
+          <td><%= player.yards %></td>
+          <td><%= player.yards_per_attempt %></td>
+          <td><%= player.yards_per_game %></td>
+          <td><%= player.touchdowns %></td>
+          <td><%= player.longest_rush %></td>
+          <td><%= player.longest_touchdown %></td>
+          <td><%= player.first_touchdown_rushes %></td>
+          <td><%= player.rushing_first_down_percentage %></td>
+          <td><%= player.twenties_yards_more_rushes %></td>
+          <td><%= player.forties_yards_more_rushes %></td>
+          <td><%= player.rushing_fumbles %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<br>
+<%= will_paginate @players %>

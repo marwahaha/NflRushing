@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  team: MyString
+  position: MyString
+  attempts: 9.99
+  yards: 1
+  games: 1
+  touchdowns: 1
+  longest_rush: 1
+  first_touchdown_rushes: 1
+  twenties_yards_more_rushes: 1
+  forties_yards_more_rushes: 1
+  rushing_fumbles: 1
+  longest_touchdown: false
+
+two:
+  name: MyString
+  team: MyString
+  position: MyString
+  attempts: 9.99
+  yards: 1
+  games: 1
+  touchdowns: 1
+  longest_rush: 1
+  first_touchdown_rushes: 1
+  twenties_yards_more_rushes: 1
+  forties_yards_more_rushes: 1
+  rushing_fumbles: 1
+  longest_touchdown: false
